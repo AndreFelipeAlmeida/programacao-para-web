@@ -172,14 +172,20 @@ img {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    padding-top: 100px;
+    align-items: end;
+    padding-left: 290px;
+    row-gap: 100px;
 }
 
-.lista-tematicas__item-destaque {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 4fr 4fr 4fr;
+.lista-tematicas__img {
+    height: 150px;
+}
+
+.lista-tematicas__img--destacar{
+    height: 350px;
 }
 
 .lista-tematicas__item {
@@ -195,5 +201,6 @@ img {
     color: #000;
     font-size: 18px;
     margin-left: 15px;
+    padding-left: 0px;
     border-left: 1px solid #000;
 }
