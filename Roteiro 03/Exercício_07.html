@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 07</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function somaNumeros(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",");
+                somaNumerosEscolhidos = 0
+                for (var i = numeros.length - 1; i >= 0; i--){
+                    numeroAtual = parseInt(numeros[i])
+                    if (numeroAtual % 2 != 0 && numeroAtual % 3 == 0) {
+                        somaNumerosEscolhidos += numeroAtual
+                    }
+                    }
+                document.write("Soma dos inteiros ímpares e múltiplos de 3: " + somaNumerosEscolhidos);
+            }
+        </script>
+    </head>
+
+    <body>
+        Texto: <input type="text" id="txtNumeros">
+        <input type="button" value="Soma dos inteiros Desejados" onclick="somaNumeros()">
+    </body>
+
+</html> 

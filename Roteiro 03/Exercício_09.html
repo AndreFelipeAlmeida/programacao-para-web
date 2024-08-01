@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 09</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function calcularEstatisticas(){
+                var numeros = document.getElementById("txtNumeros").value;
+                    numeros = numeros.split(",");
+                    somaNumeros = 0
+                    quantPositivos = 0
+                    quantNegativos = 0
+                for (var i = numeros.length - 1; i >= 0; i--){
+                    numeroAtual = parseInt(numeros[i])
+                    if (numeroAtual > 0) {
+                        quantPositivos++
+                    } else if (numeroAtual < 0) {
+                        quantNegativos++
+                    }
+                }
+                var mediaMetrica = numeros.length == 0 ? 0 : somaNumerosEscolhidos / numeros.length
+                    percentualPositivos = numeros.length == 0 ? 0 : (quantPositivos / numeros.length) * 100
+                    percentualNegativos = numeros.length == 0 ? 0 : (quantNegativos / numeros.length) * 100
+                    
+                document.write("A média aritmétrica dos valores é " + mediaMetrica);
+                document.write("A quantidade de positvos na lista é " + quantPositivos);
+                document.write("A quantidade de negativos na lista é " + quantNegativos);
+                document.write("O percentual de números positvos na lista é " + percentualPositivos + "%");
+                document.write("O percentual de números negativos na lista é " + percentualNegativos + "%");
+            }
+        </script>
+    </head>
+
+    <body>
+        Texto: <input type="text" id="txtNumeros">
+        <input type="button" value="Estatisticas" onclick="calcularEstatisticas()">
+    </body>
+
+</html> 

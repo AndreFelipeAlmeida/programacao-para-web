@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 06</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function ordernarInteiros(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",");
+                for (var i = numeros.length - 1; i >= 0; i--){
+                    for (var j = i-1; j >= 0; j--) {
+                        if (parseInt(numeros[i]) < parseInt(numeros[j])) {
+                            aux = numeros[i]
+                            numeros[i] = numeros[j]
+                            numeros[j] = aux
+                        }
+                    }
+                    
+                }
+                document.write("Lista Ordenada: " + numeros);
+            }
+        </script>
+    </head>
+
+    <body>
+        Texto: <input type="text" id="txtNumeros">
+        <input type="button" value="Ordenar inteiros" onclick="ordernarInteiros()">
+    </body>
+
+</html> 
