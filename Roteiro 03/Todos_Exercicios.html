@@ -57,9 +57,12 @@
         function separarDiaMesAno(){
             var data = document.getElementById("txtList").value;
             data = data.split("/");
-            adicionarResultado("O dia é: " + data[0] + "<br>");
-            adicionarResultado("O mês é: " + data[1] + "<br>");
-            adicionarResultado("O ano é: " + data[2] + "<br>");
+            resposta = "";
+            resposta += "O dia é: " + data[0] + "<br>";
+            resposta += "O mês é: " + data[1] + "<br>";
+            resposta += "O ano é: " + data[2] + "<br>";
+
+            adicionarResultado(resposta);
         }
 
         // Exercício 05
