@@ -13,21 +13,23 @@
                     quantNegativos = 0
                 for (var i = numeros.length - 1; i >= 0; i--){
                     numeroAtual = parseInt(numeros[i])
+                    somaNumeros += numeroAtual
                     if (numeroAtual > 0) {
                         quantPositivos++
                     } else if (numeroAtual < 0) {
                         quantNegativos++
                     }
                 }
-                var mediaMetrica = numeros.length == 0 ? 0 : somaNumerosEscolhidos / numeros.length
-                    percentualPositivos = numeros.length == 0 ? 0 : (quantPositivos / numeros.length) * 100
-                    percentualNegativos = numeros.length == 0 ? 0 : (quantNegativos / numeros.length) * 100
-                    
-                document.write("A média aritmétrica dos valores é " + mediaMetrica);
-                document.write("A quantidade de positvos na lista é " + quantPositivos);
-                document.write("A quantidade de negativos na lista é " + quantNegativos);
-                document.write("O percentual de números positvos na lista é " + percentualPositivos + "%");
-                document.write("O percentual de números negativos na lista é " + percentualNegativos + "%");
+                var mediaMetrica = numeros.length == 0 ? 0 : somaNumeros / numeros.length;
+                var percentualPositivos = numeros.length == 0 ? 0 : (quantPositivos / numeros.length) * 100;
+                var percentualNegativos = numeros.length == 0 ? 0 : (quantNegativos / numeros.length) * 100;
+
+                document.write("A média aritmética dos valores é " + mediaMetrica + "<br>");
+                document.write("A quantidade de positivos na lista é " + quantPositivos + "<br>");
+                document.write("A quantidade de negativos na lista é " + quantNegativos + "<br>");
+                document.write("O percentual de números positivos na lista é " + percentualPositivos + "%<br>");
+                document.write("O percentual de números negativos na lista é " + percentualNegativos + "%<br>");
+
             }
         </script>
     </head>
