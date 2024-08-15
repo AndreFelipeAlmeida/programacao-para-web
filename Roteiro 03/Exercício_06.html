@@ -5,27 +5,53 @@
         <meta charset = "UTF-8">
         <meta name = "viewport" content="width=device-width, initial-scale=1.0">
         <script>
-            function ordernarInteiros(){
+            function ordenarInteiros(){
                 var numeros = document.getElementById("txtNumeros").value;
                 numeros = numeros.split(",");
-                for (var i = numeros.length - 1; i >= 0; i--){
-                    for (var j = i-1; j >= 0; j--) {
-                        if (parseInt(numeros[i]) < parseInt(numeros[j])) {
-                            aux = numeros[i]
-                            numeros[i] = numeros[j]
-                            numeros[j] = aux
-                        }
-                    }
-                    
+                numeros = mergeSort(numeros, 0, numeros.length - 1);
+                document.write("A lista ordenada é " + numeros);
+            }
+
+
+            function mergeSort(array, indexEsquerda, indexDireita) {
+                if (indexEsquerda >= indexDireita) {
+                    return [array[indexEsquerda]];
                 }
-                document.write("Lista Ordenada: " + numeros);
+
+                var indexMeio = Math.floor((indexEsquerda + indexDireita) / 2);
+                var esquerda = mergeSort(array, indexEsquerda, indexMeio);
+                var direita = mergeSort(array, indexMeio + 1, indexDireita);
+                var listaOrdenada = merge(esquerda, direita);
+
+                return listaOrdenada;
+            }
+
+            function merge(esquerda, direita) {
+                var i = 0;
+                var j = 0;
+                var resultado = [];
+
+                while (i < esquerda.length && j < direita.length) {
+                    if(parseInt(esquerda[i]) <= parseInt(direita[j])) {
+                        resultado.push(esquerda[i]);
+                        i++;
+                    } else {
+                        resultado.push(direita[j]);
+                        j++;
+                    }
+                }
+
+                while (i < esquerda.length) resultado.push(esquerda[i++]);
+                while (j < direita.length) resultado.push(direita[j++]);
+
+                return resultado;
             }
         </script>
     </head>
 
     <body>
         Texto: <input type="text" id="txtNumeros">
-        <input type="button" value="Ordenar inteiros" onclick="ordernarInteiros()">
+        <input type="button" value="Ordenar inteiros" onclick="ordenarInteiros()">
     </body>
 
 </html> 

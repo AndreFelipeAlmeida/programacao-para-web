@@ -1,0 +1,47 @@
+body {
+    background-color: #737476;
+}
+
+.exercicios__text {
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.exercicios__input {
+    border-radius: 6px;
+    padding-left: 6px;
+    background-color: #d1cdc9;
+}
+
+.exercicios__botoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.exercicios__btn {
+    margin-bottom: 20px;
+    padding: 15px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 104%;
+    background-color: #B9BBBE;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.exercicios__btn:hover {
+    transform: translateY(-5px);
+    background-color: #d1cdc9; 
+}
+
+#resultado {
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
