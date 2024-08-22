@@ -19,7 +19,8 @@ const inverteTodasLetras = sentenca => {
 
 let processarSentenca = async (sentenca) => {
     const frase = await colocarTodasLetrasEmMaiusculoEm500ms(sentenca)
-    return inverteTodasLetras(frase)
+    const fraseInvertida = await inverteTodasLetras(frase)
+    return fraseInvertida
 }
 
 processarSentenca(`Teste`)
