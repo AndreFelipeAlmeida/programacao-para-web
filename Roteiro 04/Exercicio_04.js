@@ -1,14 +1,14 @@
-const soma_5_pares = valor => {
-    valor_par = valor
-    if (valor % 2 != 0)
-        valor_par += 1
+const somatorio_5_pares_consecutivos = numero => {
+    transformado_par = numero
+    if (numero % 2 != 0)
+        transformado_par += 1
 
-    array = [valor_par, valor_par + 2, valor_par + 4, valor_par + 6, valor_par + 8]
+    array = [transformado_par, transformado_par + 2, transformado_par + 4,
+        transformado_par + 6, transformado_par + 8]
 
     let somatorio = 0
-    array.forEach(elemento => somatorio += elemento)
-
-    console.log(`Entrada: ${valor} => Saída: ${somatorio}`)
+    array.forEach(valor => somatorio += valor)
+    console.log(`Entrada: ${numero} => Saída: ${somatorio}`)
 }
 
-// soma_5_pares(12)
+somatorio_5_pares_consecutivos(2)

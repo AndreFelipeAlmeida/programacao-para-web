@@ -1,22 +1,22 @@
-const numeros_primos = (inicio = 0, fim = 100) => {
-    if (inicio > fim)
+const primos = (inicio = 0, fim = 100) => {
+    if (inicio > fim) {
         [inicio, fim] = [fim, inicio]
-
-    let contador = inicio + 1
-    const numeros = Array.from({length : fim-inicio-1}).map(valor => valor = contador++)
-
-    const eh_primo = valor => {
-        if (valor === 1)
-            return false
-
-        let contador = 2
-        const valores = Array.from({length : valor-2}).map(valor => valor = contador++)
-        let primos = valores.filter(elemento => valor % elemento === 0)
-        return primos.length === 0
     }
 
-    let primos = numeros.filter(eh_primo)
+    const tamanho = fim - inicio
+    const numeros = Array.from({length: tamanho }, (_, i) => inicio + i + 1)
+
+    const verifica_primo = valor => {
+        if (valor < 2) 
+            return false
+
+        const numeros = Array.from({length: valor - 2}, (_, i) => i + 2)
+        return !numeros.some(elemento => valor % elemento === 0)
+    }
+
+    const primos = numeros.filter(verifica_primo)
+    console.log(`Números primos: `)
     primos.forEach(valor => console.log(valor))
 }
 
-// numeros_primos()
+primos(1, 23)
